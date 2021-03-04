@@ -22,18 +22,19 @@ body{
     transform-style:preserve-3d;/*flip methods*/
     perspective:1000px;/*flip methods*/
 }
-.card:hover > .card_back{/*flip methods*/
+.card-active > .card_back{/*flip methods*/
     transform:rotateY(0deg);
 }
-.card:hover > .card_front{/*flip methods*/
+.card-active > .card_front{/*flip methods*/
     transform:rotateY(-180deg);
 }
+
+
 .card_front, .card_back{/*front first then the back*/
     height:100%;
     width:100%;
     text-align:center;
     background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(megan.jpg);
-    
     background-size:cover;
     background-position:center;
     border-radius:10px;
@@ -98,7 +99,7 @@ body{
     margin:0 5px;
     cursor:pointer;
 }
-.fab:hover{
+.icons:hover{
     background:blue;
     color:white;
     transition: .2s;

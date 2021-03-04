@@ -7,6 +7,7 @@
     <title>Follow Me Card</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 </head>
 <body>
     <div class="card">
@@ -29,5 +30,11 @@
         </div>
 </div>
     </div>
+    <script>
+       $('.card').click(function(){
+           $('.card').toggleClass('card-active')
+       });
+      
+    </script>
 </body>
 </html>
