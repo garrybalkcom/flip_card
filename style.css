@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family: 'RocknRoll One', sans-serif;
+    height:100vh;
+    background:linear-gradient(45deg,rgb(255, 51, 85),orange);
+}
+.card,.card_front,
+.content,.card_back{
+    position:absolute;
+}
+.card{
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    height:400px;
+    width:290px;
+    transform-style:preserve-3d;/*flip methods*/
+    perspective:1000px;/*flip methods*/
+}
+.card:hover > .card_back{/*flip methods*/
+    transform:rotateY(0deg);
+}
+.card:hover > .card_front{/*flip methods*/
+    transform:rotateY(-180deg);
+}
+.card_front, .card_back{/*front first then the back*/
+    height:100%;
+    width:100%;
+    text-align:center;
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(megan.jpg);
+    
+    background-size:cover;
+    background-position:center;
+    border-radius:10px;
+    backface-visibility:hidden;/*flip methods*/
+    transform-style:preserve-3d;/*flip methods*/
+    transition:.7s;
+}
+.content{
+    left:0;
+    top:50%;
+    width:100%;
+    perspective:100px;
+    transform:translateY(-50%) translateZ(60px) scale(.94);
+
+}
+.front p{
+    color:white;
+    font-size:35px;
+    margin-bottom:15px;
+}
+.front p:after{
+    content:'';
+    display:block;
+    left:0;
+    right:0;
+    height:2px;
+    background:white;
+    width:100px;
+    margin:0 auto;
+    margin-top:10px;
+}
+.front span{
+    color:white;
+    font-size:23px;
+}
+.card_back{
+    transform:rotateY(180deg);/*flip methods*/
+    background: linear-gradient(45deg,blue,rgb(99, 219, 52));
+}
+.back{
+    color:white;
+}
+.back h2{
+    font-size:33px;
+    padding-bottom:5px
+}
+.back span{
+    font-size:25px;
+}
+
+.icons{
+    margin:10px 0;
+}
+.icons .fab{
+    color:blue;
+    font-size:20px;
+    height:40px;
+    width:40px;
+    background:white;
+    border-radius:50%;
+    line-height:40px;
+    margin:0 5px;
+    cursor:pointer;
+}
+.fab:hover{
+    background:blue;
+    color:white;
+    transition: .2s;
+}
